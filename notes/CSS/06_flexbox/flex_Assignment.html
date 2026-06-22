@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#111;
+}
+
+.card{
+    width:320px;
+    padding:25px;
+    border:1px solid #fff;
+    border-radius:8px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+}
+
+.top-box{
+    width:115px;
+    height:120px;
+    border:1px solid #fff;
+    border-radius:8px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+}
+
+img{
+    height: 48px;
+    object-fit: contain;
+}
+
+.about-btn{
+    background:transparent;
+    color:#fff;
+    border:1px solid #fff;
+    padding:4px 14px;
+    border-radius:4px;
+    cursor:pointer;
+}
+
+.info-row{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+}
+
+.description,
+.price{
+    border:1px solid #fff;
+    color:#fff;
+    border-radius:8px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.description{
+    width:150px;
+    height:80px;
+}
+
+.price{
+    width:75px;
+    height:80px;
+}
+
+.btn-row{
+    width:100%;
+    display:flex;
+    justify-content:space-around;
+}
+
+.buy-btn,
+.cart-btn{
+    background:transparent;
+    color:#fff;
+    border:1px solid #fff;
+    padding:10px 18px;
+    border-radius:6px;
+    cursor:pointer;
+}
+</style>
+<body>
+
+    <div class="card">
+
+        <div class="top-box">
+            <div class="img-box"><img src="../images/cup-logo.png" alt="" srcset=""></div>
+            <button class="about-btn">about</button>
+        </div>
+
+        <div class="info-row">
+            <div class="description">description</div>
+            <div class="price">price</div>
+        </div>
+
+        <div class="btn-row">
+            <button class="buy-btn">buy now</button>
+            <button class="cart-btn">add cart</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
