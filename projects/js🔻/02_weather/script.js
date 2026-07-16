@@ -43,6 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const {name, main, weather} = data
         cityNameDisplay.textContent = name
 
+        temperatureDisplay.textContent = `Tempearture : ${main.temp}`
+        descriptionDisplay.textContent = `Weather : ${weather[0].description}`
+
         // unlocking dispaly
         weatherInfo.classList.remove('hidden')
         errorMessage.classList.add('hidden')
