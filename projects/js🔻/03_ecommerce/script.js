@@ -61,16 +61,27 @@ document.addEventListener("DOMContentLoaded", () => {
             cart.forEach((item, index) => {
                 totalPrice += item.price
                 const cartItem = document.createElement('div')
+                cartItem.classList.add('product')
                 cartItem.innerHTML = `
                 ${item.name} = $${item.price.toFixed(2)}
+                <button data-index = "${index}">Remove</button>
                 `
                 cartItems.appendChild(cartItem)
-                totalPriceDisplay.textContent = `${totalPrice.toFixed(2)}`
+                
             })
         } else {
             emptyCartMessage.classList.remove('hidden')
+            cartTotalMessage.classList.add('hidden')
         }
+        totalPriceDisplay.textContent = `${totalPrice.toFixed(2)}`
     }
+    cartItems.addEventListener('click', (e) => {
+            if(e.target.tagName === 'BUTTON'){
+                const index = parseInt(e.target.getAttribute('data-index'))
+                cart.splice(index, 1)
+                renderCart()
+            }
+        })
 
     checkOutBtn.addEventListener('click', () => {
         alert('cart checked out')
