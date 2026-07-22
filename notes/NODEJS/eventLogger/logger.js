@@ -3,7 +3,7 @@ const os = require('os')
 
 const EventEmitter = require('events')
 
-const Logger extends EventEmitter {
+class Logger extends EventEmitter {
     log(message) {
         this.emit('message', {message})
     }
