@@ -18,5 +18,13 @@ const logToFile = (event) => {
     fs.appendFileSync(logFile, logMessage)
 }
 
-logger
-    .on('message', logToFile)
+logger.on('message', logToFile)
+
+setInterval(() => {
+    const memoryUsage = os.freemem() / os.totalmem() * 100
+    logger.log(`Memory usage: ${memoryUsage.toFixed(2)}%`)
+}, 3000)
+
+logger.log('application started')
+logger.log('application event occured')
+
