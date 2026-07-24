@@ -1,5 +1,9 @@
 # Product Requirements Document (PRD)
 
+# THE MAIN PROJECT IS IN THE REPO : https://github.com/DIGVIJAY-TRIPATHY/project-camp-backend
+
+
+
 ## Project Camp Backend
 
 ### 1. Product Overview
