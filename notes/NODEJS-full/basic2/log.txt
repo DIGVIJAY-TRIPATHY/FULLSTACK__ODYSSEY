@@ -1,4 +1,3 @@
-1787213960242: / GET and the ip is ::1 
-1787213960298: /favicon.ico GET and the ip is ::1 
-1787213974344: / GET and the ip is ::1 
-1787213974392: /favicon.ico GET and the ip is ::1 
+1787370493328: / GET and the ip is ::1 
+1787370572228: / GET and the ip is ::1 
+1787371306589: /about GET and the ip is ::1 
