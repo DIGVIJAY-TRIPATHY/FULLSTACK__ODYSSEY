@@ -1,11 +1,26 @@
-import React from 'react'
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import VerifyEmail from "./pages/VerifyEmail";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
-  return (
-    <div>
-      <h1 className='bg-gray-500'>hello</h1>
-    </div>
-  )
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Navigate to="/login" replace />} />
+
+                <Route path="/login" element={<Login />} />
+
+                <Route path="/register" element={<Register />} />
+
+                <Route path="/verify-email/:token" element={<VerifyEmail />} />
+
+                <Route path="/dashboard" element={<Dashboard />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
-export default App
+export default App;
