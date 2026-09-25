@@ -3,6 +3,8 @@ import { ApiError } from "../utils/ApiError.js";
 import { User } from "../models/user.model.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import jwt from "jsonwebtoken";
+import crypto from "crypto";
+import {sendVerificationEmail} from "../utils/mailer.js"
 
 const generateAccesAndRefreshTokens = async (userId) => {
     try {
@@ -56,10 +58,9 @@ const registerUser = asyncHandler(async (req, res) => {
             verificationToken,
         );
     } catch (error) {
-        await User.findByIdAndDelete(user._id);
         throw new ApiError(
             500,
-            "User created but verification email could not be sent",
+            "User couldn't created because verification email could not be sent",
         );
     }
 
@@ -121,7 +122,7 @@ const loginUser = asyncHandler(async (req, res) => {
     }
 
     const user = await User.findOne({
-        $or: [{ username }, { email }],
+        email
     });
 
     if (!user) {
