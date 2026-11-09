@@ -1,0 +1,1 @@
+## This is the simple learning of redis and how does it work with the nodejs and docker.
